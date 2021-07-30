@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>知乎</title>
+    </head>
+    <body>
+        <p id='hahah'>
+            哈哈哈
+        </p>
+    </body>
+    <script>
+   
+        // test1();
+        function test1(){
+            test2();
+        }
+        function test2(){
+            test3();
+        }
+        function test3(){
+            document.getElementById('hahah').innerHTML = new Date().toString();
+        }
+        setTimeout(() => {
+           test3();
+        }, 0);
+        new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                test1();
+                resolve();
+            }, (1000));
+        })
+        new Promise((resolve,reject)=>{
+                test1();
+                resolve();
+        })
+
+    </script>
+</html>
